@@ -1,0 +1,53 @@
+[
+    {
+      "question_text": "How confident are you in navigating the internet and using web browsers to search for information, visit websites, and find resources?",
+      "options": [
+        {"option_text": "Very confident", "option_value": 4},
+        {"option_text": "Confident", "option_value": 3},
+        {"option_text": "Somewhat confident", "option_value": 2},
+        {"option_text": "Not very confident", "option_value": 1},
+        {"option_text": "Not confident at all", "option_value": 0}
+      ]
+    },
+    {
+      "question_text": "How proficient are you in using computer software such as word processors, spreadsheets, and presentation tools?",
+      "options": [
+        {"option_text": "Very proficient", "option_value": 4},
+        {"option_text": "Proficient", "option_value": 3},
+        {"option_text": "Somewhat proficient", "option_value": 2},
+        {"option_text": "Not very proficient", "option_value": 1},
+        {"option_text": "Not proficient at all", "option_value": 0}
+      ]
+    },
+    {
+      "question_text": "How knowledgeable are you about online security practices, including creating strong passwords, recognizing phishing attempts, and safeguarding personal information?",
+      "options": [
+        {"option_text": "Very knowledgeable", "option_value": 4},
+        {"option_text": "Knowledgeable", "option_value": 3},
+        {"option_text": "Somewhat knowledgeable", "option_value": 2},
+        {"option_text": "Not very knowledgeable", "option_value": 1},
+        {"option_text": "Not knowledgeable at all", "option_value": 0}
+      ]
+    },
+    {
+      "question_text": "How comfortable are you with using email, instant messaging, and other digital communication tools to communicate effectively with others?",
+      "options": [
+        {"option_text": "Very comfortable", "option_value": 4},
+        {"option_text": "Comfortable", "option_value": 3},
+        {"option_text": "Somewhat comfortable", "option_value": 2},
+        {"option_text": "Not very comfortable", "option_value": 1},
+        {"option_text": "Not comfortable at all", "option_value": 0}
+      ]
+    },
+    {
+      "question_text": "How experienced are you with using social media platforms and managing your online presence, including privacy settings and interacting with others online?",
+      "options": [
+        {"option_text": "Very experienced", "option_value": 4},
+        {"option_text": "Experienced", "option_value": 3},
+        {"option_text": "Somewhat experienced", "option_value": 2},
+        {"option_text": "Not very experienced", "option_value": 1},
+        {"option_text": "Not experienced at all", "option_value": 0}
+      ]
+    }
+  ]
+  

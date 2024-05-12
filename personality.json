@@ -1,0 +1,38 @@
+[
+    {
+      "question": "Social Butterflies or Solo Flyers?",
+      "options": [
+        {"option_tag": "Social Butterfly", "option_text": "I thrive in social settings."},
+        {"option_tag": "Solo Flyer", "option_text": "I find quiet time essential for my well-being."}
+      ]
+    },
+    {
+      "question": "Big-Picture Thinker or Detail Detective?",
+      "options": [
+        {"option_tag": "Big-Picture Thinker", "option_text": "I see the bigger picture and think strategically."},
+        {"option_tag": "Detail Detective", "option_text": "I enjoy delving into details and ensuring accuracy."}
+      ]
+    },
+    {
+      "question": "Calculated Risks or Safe Shores?",
+      "options": [
+        {"option_tag": "Risk Taker", "option_text": "I'm willing to explore and take calculated risks."},
+        {"option_tag": "Safety Seeker", "option_text": "I prioritize stability and playing it safe."}
+      ]
+    },
+    {
+      "question": "Leading the Pack or Working in Harmony?",
+      "options": [
+        {"option_tag": "Leader", "option_text": "I take charge and lead by example."},
+        {"option_tag": "Team Player", "option_text": "I value teamwork and building consensus."}
+      ]
+    },
+    {
+      "question": "Visual learner or Textual Learner?",
+      "options": [
+        {"option_tag": "Visual Learner", "option_text": "I prefer seeing and observing concepts in action."},
+        {"option_tag": "Textual Learner", "option_text": "I learn better when it is presented in text."}
+      ]
+    }
+  ]
+  
