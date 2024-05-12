@@ -1,1 +1,13 @@
-GET http://localhost:8000/api/interests/
+POST http://localhost:8000/api/pq-submit/
+Content-Type: application/json
+
+[
+    {
+        "question_id": 2,
+        "option_id": 3
+    },
+    {
+        "question_id": 2,
+        "option_id": 3
+    }
+]

@@ -21,6 +21,10 @@ class PQSchema(Schema):
     options: List[PersonalityOptionSchema]
 
 
+class ResponseSchema(Schema):
+    question_id: int
+    option_id: int
+
 class DLLOptionSchema(ModelSchema):
     class Meta:
         model = DLLOption
