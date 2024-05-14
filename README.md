@@ -48,7 +48,7 @@ This is a Django web application for conducting psychometric tests to suggest co
 
 ### 3. View Test Results
 
-- Access the test results at `api/results/`.
+- Access the test results at `/api/results/`.
 
 ## API Documentation
 
