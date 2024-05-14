@@ -11,6 +11,7 @@ class PersonalityQuestion(models.Model):
 class PersonalityOption(models.Model):
     option_tag = models.CharField(max_length=32, null=False, blank=False)
     option_text = models.CharField(max_length=255, null=False, blank=False)
+    option_res = models.CharField(max_length=500)
     question = models.ForeignKey(
         PersonalityQuestion, on_delete=models.CASCADE, related_name="options"
     )

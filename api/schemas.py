@@ -40,4 +40,7 @@ class DLLQuestionSchema(Schema):
 class InterestSchema(ModelSchema):
     class Meta:
         model = Interest
-        fields = ["name"]
+        fields = ["id", "name"]
+
+class IntResponseSchema(Schema):
+    interest_id: int
