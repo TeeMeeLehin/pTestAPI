@@ -44,3 +44,8 @@ class InterestSchema(ModelSchema):
 
 class IntResponseSchema(Schema):
     interest_id: int
+
+class TestResultsSchema(Schema):
+    ptest_output: List[str]
+    dlltest_output: str
+    interests_output: List[str]
