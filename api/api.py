@@ -11,7 +11,7 @@ app = NinjaAPI()
 def get_questions(request):
     """
     Retrieves the list of personality questions.
-    
+
     Schema: PQSchema
 
     """
@@ -23,7 +23,7 @@ def get_questions(request):
 def submit_ptest(request, data: List[ResponseSchema]):
     """
     Collects PTest Responses
-    
+
     Schema: ResponseSchema
     """
     selected_options = []
@@ -47,7 +47,7 @@ def submit_ptest(request, data: List[ResponseSchema]):
 def get_dll_questions(request):
     """
     Retrieves the list of DLL questions.
-    
+
     Schema: DLLQuestionSchema
 
     """
@@ -59,9 +59,9 @@ def get_dll_questions(request):
 def submit_dlltest(request, data: List[ResponseSchema]):
     """
     Collects DLL-Test Responses.
-    
+
     Schema: ResponseSchema
-    
+
     """
     selected_options = []
     for datum in data:
@@ -84,7 +84,7 @@ def submit_dlltest(request, data: List[ResponseSchema]):
 def get_interests(request):
     """
     Retrieves the list of Interests.
-    
+
     Schema: InterestSchema
 
     """
@@ -96,9 +96,9 @@ def get_interests(request):
 def submit_dlltest(request, data: List[IntResponseSchema]):
     """
     Collects Interests Responses
-    
+
     Schema: IntResponseSchema
-    
+
     """
     selected_interests = []
     for datum in data:
@@ -111,7 +111,7 @@ def submit_dlltest(request, data: List[IntResponseSchema]):
 def test_results(request):
     """
     Retrieves the test results reponse.
-    
+
     Schema: TestResultsSchema
 
     """

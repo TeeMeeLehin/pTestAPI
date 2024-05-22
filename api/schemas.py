@@ -25,6 +25,7 @@ class ResponseSchema(Schema):
     question_id: int
     option_id: int
 
+
 class DLLOptionSchema(ModelSchema):
     class Meta:
         model = DLLOption
@@ -42,8 +43,10 @@ class InterestSchema(ModelSchema):
         model = Interest
         fields = ["id", "name"]
 
+
 class IntResponseSchema(Schema):
     interest_id: int
+
 
 class TestResultsSchema(Schema):
     ptest_output: List[str]

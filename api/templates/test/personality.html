@@ -1,0 +1,6 @@
+<!-- personality_test.html -->
+<form method="post" action="{% url 'personality' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>

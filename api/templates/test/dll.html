@@ -1,0 +1,12 @@
+<form method="post" action="{% url 'dll' %}">
+    {% csrf_token %}
+    {% for question in questions %}
+        <h3>{{ question.question_text }}</h3>
+        <select name="question_{{ question.id }}">
+            {% for option in question.options.all %}
+                <option value="{{ option.id }}">{{ option.option_text }}</option>
+            {% endfor %}
+        </select>
+    {% endfor %}
+    <button type="submit">Submit</button>
+</form>
