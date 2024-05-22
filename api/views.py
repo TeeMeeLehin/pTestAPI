@@ -37,8 +37,8 @@ def dll_view(request):
                 selected_option = question.options.get(id=selected_option_id)
                 score += selected_option.option_value / 4
 
-            dll_text = web_dll(score)
-            request.session["dll_level"] = dll_text
+            dll_texts = web_dll(score)
+            request.session["dll_level"] = [dll_texts[0], dll_texts[1]]
 
         return redirect("interests")
 
@@ -63,7 +63,7 @@ def interests_view(request):
 
 def results(request):
     ptest = web_perse(request.session.get("ptest_responses", []))
-    dll = request.session.get("dll_level", "nil")
+    dll = request.session.get("dll_level", [])
     interests = request.session.get("interests", [])
 
     return render(

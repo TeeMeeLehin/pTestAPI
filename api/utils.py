@@ -39,11 +39,11 @@ def compute_interest(i_options: List[int]):
 
 def web_dll(score):
     if score >= 4:
-        return "Your Digital Literacy Level - Advanced"
+        return "Advanced", "You're practically a digital guru! You navigate the web with the grace of a seasoned sailor. But even the best captains can learn new tricks. Our advanced courses will push your digital boundaries and keep you at the forefront of the ever-evolving online world. Time to become a legendary digital master!"
     elif score < 2.5:
-        return "Your Digital Literacy Level - Beginner"
+        return "Beginner", "You're taking your first steps into the exciting world of the internet! Think of yourself as a digital explorer, learning the ropes and navigating uncharted territories (websites). Don't worry if things seem overwhelming at first. We have beginner-friendly courses to help you confidently conquer the online jungle and avoid any digital pitfalls."
     else:
-        return "Your Digital Literacy Level - Intermediate"
+        return "Intermediate", "You're no longer a digital newbie, but maybe not quite a web whiz. You can browse the web like a pro, but some online tools might still leave you scratching your head. That's okay! We have intermediate courses to boost your skills and turn you into a confident online citizen. Get ready to unleash your inner digital ninja!"
 
 def web_perse(p_options: List[str]):
     res = []

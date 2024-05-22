@@ -1,12 +1,28 @@
-<form method="post" action="{% url 'dll' %}">
-    {% csrf_token %}
-    {% for question in questions %}
-        <h3>{{ question.question_text }}</h3>
-        <select name="question_{{ question.id }}">
-            {% for option in question.options.all %}
-                <option value="{{ option.id }}">{{ option.option_text }}</option>
-            {% endfor %}
-        </select>
-    {% endfor %}
-    <button type="submit">Submit</button>
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivar DLL Test</title>
+    <link rel="stylesheet" href="{% static 'css/dll.css' %}">
+</head>
+<body>
+    <form method="post" action="{% url 'dll' %}">
+        <div class="hs">
+            <h1>Motivar</h1>
+            <h2>Digital Literacy Test</h2>
+        </div>
+        {% csrf_token %}
+        {% for question in questions %}
+            <h3>{{ question.question_text }}</h3>
+            <select name="question_{{ question.id }}">
+                {% for option in question.options.all %}
+                    <option value="{{ option.id }}">{{ option.option_text }}</option>
+                {% endfor %}
+            </select>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,10 +1,44 @@
-<h2>Your Personality Results</h2>
-{% for res in ptest %}
-    <h3>{{ res }}</h3>
-{% endfor %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="{% static 'css/results.css' %}">
+    <script src="{% static 'js/scripts.js' %}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>Your Personality Results</h2>
+            {% for res in ptest %}
+                <div class="result-item">
+                    <h3>{{ res }}</h3>
+                </div>
+            {% endfor %}
+        </div>
 
-<h2>{{ dll }}</h2>
+        <div class="box">
+            <h2>Your Digital Litercay Level</h2>
+            {% for d in dll %}
+                <div class="result-item">
+                    <h3>{{ d }}</h3>
+                </div>
+            {% endfor %}
+        </div>
 
-{% for inte in interests %}
-    <h3> {{ inte }}</h3>
-{% endfor %}
+        <div class="box">
+            <h2>Your Learning Interests</h2>
+            {% for inte in interests %}
+                <div class="result-item">
+                    <h3>{{ inte }}</h3>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <footer>
+        <p>Copyright © 2024 Motivar</p>
+    </footer>
+</body>
+</html>

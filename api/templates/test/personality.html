@@ -9,8 +9,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>Motivar</h1>
-        <h2>Personality Test</h2>
+        <div class="hs">
+            <h1>Motivar</h1>
+            <h2>Personality Test</h2>
+        </div>
         <form method="post" action="{% url 'personality' %}">
             {% csrf_token %}
             {{ form.as_p }}
