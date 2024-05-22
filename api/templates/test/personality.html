@@ -1,6 +1,21 @@
-<!-- personality_test.html -->
-<form method="post" action="{% url 'personality' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivar Personality Test</title>
+    <link rel="stylesheet" href="{% static 'css/p.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Motivar</h1>
+        <h2>Personality Test</h2>
+        <form method="post" action="{% url 'personality' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
