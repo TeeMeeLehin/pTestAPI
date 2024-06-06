@@ -1,5 +1,5 @@
 from django import forms
-from .models import PersonalityQuestion, Interest
+from .models import PersonalityQuestion, Interest, Ability
 
 
 class PersonalityTestForm(forms.Form):
@@ -26,4 +26,18 @@ class InterestSelectionForm(forms.Form):
 
     selected_interests = forms.MultipleChoiceField(
         choices=interests, widget=forms.CheckboxSelectMultiple, required=False
+    )
+
+
+class AbilitySelectionForm(forms.Form):
+    ability_choices = Ability.objects.values_list("id", "ability_text")
+
+    selected_abilities = forms.MultipleChoiceField(
+        choices=ability_choices, widget=forms.CheckboxSelectMultiple, required=False
+    )
+
+
+class LearningInterestForm(forms.Form):
+    learning_interest = forms.CharField(
+        label="What do you want to learn?", max_length=300
     )

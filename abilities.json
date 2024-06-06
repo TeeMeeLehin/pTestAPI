@@ -1,0 +1,82 @@
+[
+    {
+        "ability_tag": "Basic Coding",
+        "ability_text": "I can write simple programs in languages like Python or JavaScript."
+    },
+    {
+        "ability_tag": "Web Design",
+        "ability_text": "I can create and style websites using HTML and CSS."
+    },
+    {
+        "ability_tag": "Social Media Marketing",
+        "ability_text": "I know how to promote products or services using social media platforms like Instagram and Facebook."
+    },
+    {
+        "ability_tag": "Photo Editing",
+        "ability_text": "I can use software like Photoshop to edit and improve photos."
+    },
+    {
+        "ability_tag": "Basic Data Analysis",
+        "ability_text": "I can use tools like Excel to analyze data and create charts."
+    },
+    {
+        "ability_tag": "Blog Writing",
+        "ability_text": "I can write interesting blog posts on different topics."
+    },
+    {
+        "ability_tag": "Language Skills",
+        "ability_text": "I can speak and understand more than one language."
+    },
+    {
+        "ability_tag": "Basic Photography",
+        "ability_text": "I can take good photos using a camera or smartphone."
+    },
+    {
+        "ability_tag": "Business Ideas",
+        "ability_text": "I can come up with and develop new business ideas."
+    },
+    {
+        "ability_tag": "Video Creation",
+        "ability_text": "I can make and edit videos using software like iMovie or Premiere Pro."
+    },
+    {
+        "ability_tag": "Computer Security",
+        "ability_text": "I know how to keep computers and personal information safe from hackers."
+    },
+    {
+        "ability_tag": "Public Speaking",
+        "ability_text": "I am comfortable speaking in front of groups of people."
+    },
+    {
+        "ability_tag": "Teamwork",
+        "ability_text": "I work well with others to achieve common goals."
+    },
+    {
+        "ability_tag": "Time Management",
+        "ability_text": "I can organize my time effectively to complete tasks."
+    },
+    {
+        "ability_tag": "Customer Service",
+        "ability_text": "I know how to help and communicate with customers to solve their problems."
+    },
+    {
+        "ability_tag": "Event Planning",
+        "ability_text": "I can plan and organize events like parties or meetings."
+    },
+    {
+        "ability_tag": "Problem Solving",
+        "ability_text": "I can find solutions to problems quickly and effectively."
+    },
+    {
+        "ability_tag": "Creative Writing",
+        "ability_text": "I can write stories, poems, or other creative pieces."
+    },
+    {
+        "ability_tag": "Research Skills",
+        "ability_text": "I know how to find and gather information on different topics."
+    },
+    {
+        "ability_tag": "Basic Cooking",
+        "ability_text": "I can cook simple meals and follow recipes."
+    }
+]

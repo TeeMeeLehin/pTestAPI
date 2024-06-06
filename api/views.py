@@ -1,11 +1,17 @@
 from django.shortcuts import render, redirect
-from .forms import PersonalityTestForm, InterestSelectionForm
+from .forms import (
+    PersonalityTestForm,
+    InterestSelectionForm,
+    AbilitySelectionForm,
+    LearningInterestForm,
+)
 from .models import DLLQuestion
-from .utils import web_dll, web_perse
+from .utils import web_dll, web_perse, compute_query, recommend_courses
 
 
 def index(request):
-    return render(request, 'test/index.html')
+    return render(request, "test/index.html")
+
 
 def personality_view(request):
     if request.method == "POST":
@@ -40,11 +46,44 @@ def dll_view(request):
             dll_texts = web_dll(score)
             request.session["dll_level"] = [dll_texts[0], dll_texts[1]]
 
-        return redirect("interests")
+        return redirect("abilities")
 
     return render(request, "test/dll.html", {"questions": questions})
 
 
+def abilities_view(request):
+    if request.method == "POST":
+        form = AbilitySelectionForm(request.POST)
+        if form.is_valid():
+            selected_abilities = form.cleaned_data["selected_abilities"]
+            request.session["abilities"] = selected_abilities
+            return redirect("wants")
+
+    else:
+        form = AbilitySelectionForm()
+
+    return render(request, "test/ability.html", {"form": form})
+
+
+def learning_interest(request):
+    if request.method == "POST":
+        form = LearningInterestForm(request.POST)
+        if form.is_valid():
+            wants = form.cleaned_data["learning_interest"]
+            request.session["wants"] = wants
+            return redirect("recommend")
+    else:
+        form = LearningInterestForm()
+    return render(request, "test/wants.html", {"form": form})
+
+
+def recommend(request):
+    query = compute_query(request.session)
+    courses = recommend_courses(query)
+    
+    return render(request, 'test/recommend.html', {'courses': courses})
+
+"""
 def interests_view(request):
     if request.method == "POST":
         form = InterestSelectionForm(request.POST)
@@ -71,3 +110,4 @@ def results(request):
         "test/results.html",
         {"ptest": ptest, "dll": dll, "interests": interests},
     )
+"""

@@ -5,6 +5,7 @@ from .models import (
     Interest,
     DLLOption,
     DLLQuestion,
+    Ability,
 )
 
 # Register your models here.
@@ -13,3 +14,4 @@ admin.site.register(PersonalityQuestion)
 admin.site.register(Interest)
 admin.site.register(DLLOption)
 admin.site.register(DLLQuestion)
+admin.site.register(Ability)

@@ -1,0 +1,36 @@
+<body>
+    <p>{{ query }}</p>
+</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivar Recommendation System</title>
+</head>
+<body>
+    <h1>Motivar Course Recommendation System</h1>
+
+    {% if courses %}
+    <h2>Recommended Courses for You</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Link</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for course in courses %}
+            <tr>
+                <td>{{ course.title }}</td>
+                <td><a href="{{ course.url }}">Link</a></td>
+                <td>{{ course.description }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</body>
+</html>

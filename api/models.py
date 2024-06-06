@@ -43,3 +43,28 @@ class Interest(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Ability(models.Model):
+    ability_tag = models.CharField(max_length=32, null=False, blank=False)
+    ability_text = models.CharField(max_length=255, null=False, blank=False)
+
+    def __str__(self):
+        return f"{self.ability_tag}: {self.ability_text}"
+
+    class Meta:
+        verbose_name_plural = "Abilities"
+
+
+class Courses(models.Model):
+    title = models.CharField(max_length=200, blank=False, null=False)
+    url = models.CharField(max_length=100, blank=False, null=False)
+    description = models.CharField(max_length=400, blank=False, null=False)
+    level = models.CharField(max_length=100)
+    status = models.CharField(max_length=100)
+    review = models.CharField(max_length=100)
+    tags = models.CharField(max_length=500)
+    slugs = models.CharField(max_length=500, blank=False, null=False)
+
+    def __str__(self):
+        return self.title
