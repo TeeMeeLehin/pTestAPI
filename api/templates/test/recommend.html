@@ -1,36 +1,42 @@
-<body>
-    <p>{{ query }}</p>
-</body>
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motivar Recommendation System</title>
+    <title>Motivar Course Recommendation System</title>
+    <link rel="stylesheet" href="{% static 'css/rec.css' %}">
 </head>
 <body>
-    <h1>Motivar Course Recommendation System</h1>
-
-    {% if courses %}
-    <h2>Recommended Courses for You</h2>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Link</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for course in courses %}
-            <tr>
-                <td>{{ course.title }}</td>
-                <td><a href="{{ course.url }}">Link</a></td>
-                <td>{{ course.description }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    {% endif %}
+    <div class="container">
+        <div class="hs">
+            <h1>Motivar Course Recommendation System</h1>
+        </div>
+        <p>{{ query }}</p>
+        {% if courses %}
+        <h2>Recommended Courses for You</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Link</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for course in courses %}
+                <tr>
+                    <td>{{ course.title }}</td>
+                    <td><a href="{{ course.url }}" target="_blank">Link</a></td>
+                    <td>{{ course.description }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+    <footer>
+        <p>Copyright © 2024 Motivar</p>
+    </footer>
 </body>
 </html>

@@ -39,5 +39,5 @@ class AbilitySelectionForm(forms.Form):
 
 class LearningInterestForm(forms.Form):
     learning_interest = forms.CharField(
-        label="What do you want to learn?", max_length=300
+        label="", max_length=300
     )
