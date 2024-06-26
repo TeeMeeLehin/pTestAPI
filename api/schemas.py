@@ -1,3 +1,4 @@
+'''
 from ninja import Schema, ModelSchema
 from typing import List
 from .models import (
@@ -52,3 +53,4 @@ class TestResultsSchema(Schema):
     ptest_output: List[str]
     dlltest_output: str
     interests_output: List[str]
+'''

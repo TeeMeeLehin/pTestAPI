@@ -1,3 +1,4 @@
+'''
 from ninja import NinjaAPI
 from .schemas import *
 from .models import *
@@ -130,3 +131,4 @@ def test_results(request):
             "interests_output": interests,
         }
     )
+'''
