@@ -1,39 +1,23 @@
 from typing import List
 from api.models import *
-from sklearn.feature_extraction.text import TfidfVectorizer
+import os
+import pickle
 from sklearn.metrics.pairwise import linear_kernel
-from django.core.cache import cache
-import pandas as pd
 
-def get_recommendation_model():
-    # Check if recommendation model is cached
-    recommendation_model = cache.get('recommendation_model')
-    if recommendation_model is None:
-        # Fetch data from the database
-        data = list(Courses.objects.values('title', 'slugs'))
-        df = pd.DataFrame(data)
+MODEL_PATH = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', 'recommendation_model.pkl')
 
-        # TF-IDF vectorization
-        tfidf = TfidfVectorizer(stop_words='english')
-        tfidf_matrix = tfidf.fit_transform(df['slugs'])
+# load recommender model
+def load_recommendation_model():
+    if os.path.exists(MODEL_PATH):
+        with open(MODEL_PATH, 'rb') as f:
+            recommendation_model = pickle.load(f)
+        return recommendation_model
+    else:
+        raise FileNotFoundError(f"Model file not found at {MODEL_PATH}")
 
-        # Calculate similarity
-        cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
-
-        # Cache the recommendation model
-        recommendation_model = {
-            'df': df,
-            'tfidf': tfidf,
-            'tfidf_matrix': tfidf_matrix,
-            'cosine_sim': cosine_sim
-        }
-        cache.set('recommendation_model', recommendation_model, timeout=None)  # Cache indefinitely
-
-    return recommendation_model
-
-# Function to recommend courses
+# recommender function
 def recommend_courses(query):
-    recommendation_model = get_recommendation_model()
+    recommendation_model = load_recommendation_model()
     df = recommendation_model['df']
     tfidf = recommendation_model['tfidf']
     tfidf_matrix = recommendation_model['tfidf_matrix']
@@ -42,7 +26,7 @@ def recommend_courses(query):
     tfidf_query = tfidf.transform([query])
     sim_scores = list(linear_kernel(tfidf_query, tfidf_matrix).flatten())
     course_indices = sorted(range(len(sim_scores)), key=lambda i: sim_scores[i], reverse=True)
-    recommended_titles = df.iloc[course_indices][:10]['title'].tolist()
+    recommended_titles = df.iloc[course_indices][:10]['Title'].tolist()
     
     recommended_courses = Courses.objects.filter(title__in=recommended_titles)
     return recommended_courses
