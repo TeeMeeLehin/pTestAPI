@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
-df = pd.read_csv('dbc.csv')
+df = pd.read_csv('DB.csv')
 df = df[['Title', 'Slugs']]
 
 # TF-IDF vectorization
